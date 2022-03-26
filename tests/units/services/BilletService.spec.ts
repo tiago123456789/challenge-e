@@ -55,7 +55,7 @@ describe("BilletService", () => {
     })
 
     it("Should be return codeBar, amount and expirationDate when digitable line valid", 
-    () => {
+    async () => {
         try {
             const fakeResult = {
                 "codeBar": "21299758700000020000001121100012100447561740",
@@ -63,7 +63,7 @@ describe("BilletService", () => {
                 "expirationDate": "2018-07-16"
             }
             const billetService = new BilletServiceFactory().make({})
-            const result: DigitableLineDto = billetService.getDataDigitableLine(
+            const result: DigitableLineDto = await billetService.getDataDigitableLine(
                 "21290001192110001210904475617405975870000002000"
             )
             expect(result.amount).toBe(fakeResult.amount)

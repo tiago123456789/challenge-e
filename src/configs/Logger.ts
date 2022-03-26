@@ -3,7 +3,7 @@ import moment from "moment";
 
 const logger = winston.createLogger({
   format: winston.format.json(),
-  defaultMeta: { "timestamp": moment.utc().format(), "app": process.env.APP_NAME },
+  defaultMeta: { "timestamp": moment.utc().format() },
   transports: [
     new winston.transports.File({
       filename: __dirname + '/../../logs/error.log', level: 'error'

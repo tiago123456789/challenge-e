@@ -9,10 +9,10 @@ export default class BilletEndpoint {
         this.getDataDigitableLine = this.getDataDigitableLine.bind(this)
     }
 
-    getDataDigitableLine(request: Request, response: Response, next: NextFunction) {
+    async getDataDigitableLine(request: Request, response: Response, next: NextFunction) {
         try {
             const line = request.params.digitableLine
-            const data = this.billetService.getDataDigitableLine(line)
+            const data = await this.billetService.getDataDigitableLine(line)
             return response.json(data)
         } catch(error) {
             next(error);
