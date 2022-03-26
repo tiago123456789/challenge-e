@@ -9,4 +9,5 @@ services:
         volumes:
             - ./node_modules/:/app/node_modules/
             - ./src/:/app/src
+            - ./logs/:/app/logs
         container_name: application_challenge_e
