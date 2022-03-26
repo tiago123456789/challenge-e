@@ -1,6 +1,5 @@
 import DigitableLineDto from "../../../src/dtos/DigitableLineResultDto"
 import BilletServiceFactory from "../../../src/factories/BilletServiceFactory"
-import BilletService from "../../../src/services/BilletService"
 
 describe("BilletService", () => {
 
