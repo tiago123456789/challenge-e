@@ -4,30 +4,30 @@ import BilletServiceFactory from "../../../src/factories/BilletServiceFactory"
 describe("BilletService", () => {
 
     it("Should be throw exception when informate digitable line with currency value different 9", 
-    () => {
+    async () => {
         try {
             const billetService = new BilletServiceFactory().make({})
-            billetService.getDataDigitableLine("00180000090327742002664073922177889350000043694")
+            await billetService.getDataDigitableLine("00180000090327742002664073922177889350000043694")
         } catch(error: any) {
             expect(error.message).toBe("Linha digital está inválida")
         }
     })
 
     it("Should be throw exception when informate line with characters non numeric", 
-    () => {
+    async () => {
         try {
             const billetService = new BilletServiceFactory().make({})
-            billetService.getDataDigitableLine("abcabc")
+            await billetService.getDataDigitableLine("abcabc")
         } catch(error: any) {
             expect(error.message).toBe("Linha digital aceita apenas números")
         }
     })
 
     it("Should be throw exception when informate line exceed 47 or 48 characters", 
-    () => {
+    async () => {
         try {
             const billetService = new BilletServiceFactory().make({})
-            billetService.getDataDigitableLine("00190000090327742002664073922177889350000043694000")
+            await billetService.getDataDigitableLine("00190000090327742002664073922177889350000043694000")
         } catch(error: any) {
             expect(error.message).toBe("Linha digital está inválida")
         }
@@ -35,20 +35,20 @@ describe("BilletService", () => {
 
 
     it("Should be throw exception when informate line exceed 47 or 48 characters", 
-    () => {
+    async () => {
         try {
             const billetService = new BilletServiceFactory().make({})
-            billetService.getDataDigitableLine("00190000090327742002664073922177889350000043694000")
+            await billetService.getDataDigitableLine("00190000090327742002664073922177889350000043694000")
         } catch(error: any) {
             expect(error.message).toBe("Linha digital está inválida")
         }
     })
 
     it("Should be throw exception when informate line with DV invalid", 
-    () => {
+    async () => {
         try {
             const billetService = new BilletServiceFactory().make({})
-            billetService.getDataDigitableLine("21290001192110001210904475617406975870000002000")
+            await billetService.getDataDigitableLine("21290001192110001210904475617406975870000002000")
         } catch(error: any) {
             expect(error.message).toBe("Linha digital tem DV inválidos")
         }
