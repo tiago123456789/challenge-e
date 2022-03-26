@@ -9,6 +9,7 @@ a rota para api é a seguinte http://localhost:3000/boletos/:linha_digitavel_aqu
 Instruções para rodar o projeto usando docker:
 ===============================================
 - Clonar 
+- Executar o comando **npm i** para baixar os modulos necessários
 - Criar arquivo **.env** baseado no arquivo **.env.example**
 - Executar o comando **docker-compose up** para rodar aplicação. OBS: 
 a rota para api é a seguinte http://localhost:3000/boletos/:linha_digitavel_aqui
