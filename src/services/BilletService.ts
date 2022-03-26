@@ -47,7 +47,6 @@ export default class BilletService {
 
             resolve(true)
         })
-        
     }
 
     async getDataDigitableLine(line: string): Promise<DigitableLineResultDto> {
